@@ -14,7 +14,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 <script>
 $(function() {
-	$("#btn-b").click(function() {	
+	$("#btn-b").click(function() {
 		$("#result-b").load("/res/b");
 	});
 	
@@ -68,24 +68,24 @@ $(function() {
 		});
 	});
 	
-	$("#btn-i").click(function () {
-		$.get("/res/i", "mystring")
+	$("#btn-i").click(function() {
+		$.get("/res/i", "name=myname");
 	});
 	
-	$("#btn-j").click(function () {
-		$.get("/res/j", "name=myname")
+	$("#btn-j").click(function() {
+		$.get("/res/j", "name=myname&age=22");
 	});
 	
-	$("#btn-k").click(function () {
-		var obj = {name: "myname", age:22};
-		$.get("/res/k", obj);
+	$("#btn-k").click(function() {
+		var o = {name: "myname", age:22};
+		$.get("/res/k", o);
 	});
 	
-	$("#btn-l").click(function () {
-		$.get("/res/l", "id=3", function (data) {
+	$("#btn-l").click(function() {
+		$.get("/res/l", "id=3", function(data) {
 			$("#result-l").append(data.name + ", " + data.age);
 		});
-	});
+	})
 })
 </script>
 <title>Insert title here</title>
@@ -130,6 +130,5 @@ $(function() {
 
 <button id="btn-l">get l with data</button>
 <div id="result-l"></div>
-
 </body>
 </html>
